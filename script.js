@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    if ('caches' in window) {
+        caches.keys().then(function(cacheNames) {
+            cacheNames.forEach(function(cacheName) {
+                caches.delete(cacheName);
+            });
+        });
+    }
+
     const countdownElement = document.getElementById("countdown");
     const targetDate = new Date("December 1, 2024 20:00:00 GMT-3").getTime();
 
