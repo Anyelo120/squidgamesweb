@@ -28,7 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (distance < 0) {
             clearInterval(interval);
-            countdownElement.innerHTML = "El misterio ha llegado...";
+            countdownElement.innerHTML = `
+                <p>El misterio ha llegado...</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XNCnmQksrmk" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
         }
     }
 
