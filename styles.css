@@ -1,0 +1,122 @@
+
+body {
+    background: #000000;
+    color: #8b0000;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.countdown-container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 2em;
+    color: #8b0000;
+    font-weight: bold;
+    text-shadow: 0 0 15px #8b0000;
+}
+
+#countdown {
+    font-size: 2.5em;
+    color: #ffffff;
+    text-shadow: 0 0 10px #8b0000;
+    margin-bottom: 20px;
+}
+
+.countdown-image {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.shape {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 0, 0, 0.8);
+    pointer-events: none;
+    z-index: 5;
+    animation: disperse 1.2s ease-out forwards;
+}
+
+.shape.circle {
+    border-radius: 50%;
+}
+
+.shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid rgba(255, 0, 0, 0.8);
+    background: none;
+}
+
+.shape.square {
+    border-radius: 2px;
+}
+
+@keyframes disperse {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(40px, -30px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.hidden-button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.3s, border 0.3s;
+}
+
+.hidden-button:hover {
+    border: 1px solid #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#button1 {
+    top: 10px;
+    left: 10px;
+}
+
+#button2 {
+    bottom: 10px;
+    right: 10px;
+}
+
+#button3 {
+    top: 10px;
+    right: 10px;
+}
+
+.hidden-button.activated {
+    border: 1px solid #8b0000;
+    background: rgba(255, 0, 0, 0.5);
+}
+
+#secret-text {
+    display: none;
+    font-size: 2em;
+    color: #ffffff;
+    text-shadow: 0 0 15px #8b0000;
+}
