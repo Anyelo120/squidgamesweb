@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const targetDate = new Date("December 1, 2024 20:00:00 GMT-3").getTime();
 
     function updateCountdown() {
-        const now = new Date().toLocaleString("en-US", { timeZone: "America/Santiago" });
-        const currentDate = new Date(now).getTime();
+        const currentDate = new Date().getTime();
 
         const distance = targetDate - currentDate;
 
